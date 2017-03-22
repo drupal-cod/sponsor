@@ -2,7 +2,7 @@
   "name": "drupal/sponsors",
   "type": "drupal-module",
   "description": "Drupal module for creating sponsors for an event",
-  "keywords": ["Drupal," "COD", "Events", "Sponsors"],
+  "keywords": [ "Drupal," "COD", "Events", "Sponsors" ],
   "homepage": "https://github.com/drupal-cod/sponsors",
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
