@@ -10,14 +10,7 @@ dependencies:
   module:
     - image
     - link
-    - panelizer
     - user
-third_party_settings:
-  panelizer:
-    enable: false
-    custom: false
-    allow: false
-    default: default
 id: node.sponsor.default
 targetEntityType: node
 bundle: sponsor
