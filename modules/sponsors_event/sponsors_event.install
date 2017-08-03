@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the COD Event module.
+ */
+
+/**
+ * Configure OG on module installation.
+ */
+function sponsors_event_install() {
+  $config = \Drupal::service('config.factory')->getEditable('core.entity_form_display.node.sponsor.default');
+  $config->set('content.og_audience.type', 'og_complex');
+  $config->set('content.og_audience.weight', '26');
+  $config->set('content.og_audience.region', 'content');
+  $config->set('content.og_audience.settings.match_operator', 'CONTAINS');
+  $config->set('content.og_audience.settings.size', '60');
+  $config->set('content.og_audience.settings.placeholder', []);
+  $config->set('content.og_audience.third_party_settings', []);
+  $config->save();
+}
