@@ -1,11 +1,12 @@
+uuid: b5f27b0f-7685-443a-8c24-dddc38fc9114
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - user
-id: node.field_sponsor_related_attendees
-field_name: field_sponsor_related_attendees
+id: node.field_related_attendees
+field_name: field_related_attendees
 entity_type: node
 type: entity_reference
 settings:

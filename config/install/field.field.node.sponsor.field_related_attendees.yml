@@ -1,11 +1,12 @@
+uuid: 02c803c6-566d-42b8-949a-3427d6fd3c1c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sponsor_related_attendees
+    - field.storage.node.field_related_attendees
     - node.type.sponsor
-id: node.sponsor.field_sponsor_related_attendees
-field_name: field_sponsor_related_attendees
+id: node.sponsor.field_related_attendees
+field_name: field_related_attendees
 entity_type: node
 bundle: sponsor
 label: 'Related Attendees'
@@ -17,7 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:user'
   handler_settings:
-    include_anonymous: true
+    include_anonymous: false
     filter:
       type: _none
     target_bundles: null

@@ -1,12 +1,15 @@
+uuid: cfac6668-a21c-4cce-a354-2d4746cd7c0b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sponsor_sponsorship_level
+    - field.storage.node.field_sponsorship_level
     - node.type.sponsor
     - taxonomy.vocabulary.sponsorship_level
-id: node.sponsor.field_sponsor_sponsorship_level
-field_name: field_sponsor_sponsorship_level
+_core:
+  default_config_hash: BHN3OxTj_ixMSvA7IIJ29RK2mCPfqp8dOQhbfWpqYkY
+id: node.sponsor.field_sponsor
+field_name: field_sponsor
 entity_type: node
 bundle: sponsor
 label: 'Sponsorship Level'

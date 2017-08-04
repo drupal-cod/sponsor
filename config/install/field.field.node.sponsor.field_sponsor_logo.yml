@@ -1,3 +1,4 @@
+uuid: 66c1dbbf-27f2-4ae3-b028-0fc41e757d38
 langcode: en
 status: true
 dependencies:
@@ -10,14 +11,14 @@ id: node.sponsor.field_sponsor_logo
 field_name: field_sponsor_logo
 entity_type: node
 bundle: sponsor
-label: Logo
+label: 'Sponsor Logo'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_directory: sponsor/logos
   file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
