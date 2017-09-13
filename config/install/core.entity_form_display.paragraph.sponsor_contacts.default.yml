@@ -1,0 +1,46 @@
+uuid: 18d7aa32-7afe-47f2-bc2b-ace8fd752212
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.sponsor_contacts.field_sponsor_contact_address
+    - field.field.paragraph.sponsor_contacts.field_sponsor_contact_notes
+    - field.field.paragraph.sponsor_contacts.field_sponsor_contact_ref
+    - paragraphs.paragraphs_type.sponsor_contacts
+  module:
+    - address
+    - text
+    - workbench_moderation
+id: paragraph.sponsor_contacts.default
+targetEntityType: paragraph
+bundle: sponsor_contacts
+mode: default
+content:
+  field_sponsor_contact_address:
+    weight: 6
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_sponsor_contact_notes:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_sponsor_contact_ref:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

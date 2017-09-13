@@ -1,0 +1,28 @@
+uuid: 1d034597-4b93-492b-a8f5-0e5096ee984b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sponsor_contact_ref
+    - paragraphs.paragraphs_type.sponsor_contacts
+id: paragraph.sponsor_contacts.field_sponsor_contact_ref
+field_name: field_sponsor_contact_ref
+entity_type: paragraph
+bundle: sponsor_contacts
+label: 'User Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

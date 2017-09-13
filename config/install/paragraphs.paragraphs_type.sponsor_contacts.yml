@@ -1,0 +1,7 @@
+uuid: deffb851-0ba9-472e-8d1f-68ca3df20f72
+langcode: en
+status: true
+dependencies: {  }
+id: sponsor_contacts
+label: 'Sponsor Contacts'
+behavior_plugins: {  }

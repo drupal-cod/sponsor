@@ -1,17 +1,41 @@
+uuid: 08619ed2-c97c-4eef-97d4-e029585f9537
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sponsor.field_sponsor_body
+    - field.field.node.sponsor.field_sponsor_contacts
     - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_other_levels
     - field.field.node.sponsor.field_sponsor_related_attendees
     - field.field.node.sponsor.field_sponsor_sponsorship_level
     - field.field.node.sponsor.field_sponsor_url
     - image.style.thumbnail
     - node.type.sponsor
   module:
+    - field_group
     - image
     - link
+    - paragraphs
     - path
+    - text
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_sponsor_private_info:
+      children:
+        - field_sponsor_contacts
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Private Information'
+_core:
+  default_config_hash: hqneXeygDHi98TDoKTRN6BAx8bj0FRs-FLkLwnwfSt4
 id: node.sponsor.default
 targetEntityType: node
 bundle: sponsor
@@ -19,53 +43,90 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_sponsor_body:
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_sponsor_contacts:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_sponsor_logo:
     type: image_image
-    weight: 2
+    weight: 3
     settings:
       preview_image_style: thumbnail
       progress_indicator: throbber
     third_party_settings: {  }
+    region: content
+  field_sponsor_other_levels:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_sponsor_related_attendees:
-    weight: 4
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_sponsor_sponsorship_level:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_sponsor_url:
-    weight: 1
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
   path:
     type: path
-    weight: 9
+    weight: 11
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 9
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 10
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -73,12 +134,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

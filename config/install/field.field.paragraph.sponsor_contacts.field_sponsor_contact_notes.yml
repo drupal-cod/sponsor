@@ -1,0 +1,21 @@
+uuid: 31b38983-519a-425e-a10b-04815f46a327
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sponsor_contact_notes
+    - paragraphs.paragraphs_type.sponsor_contacts
+  module:
+    - text
+id: paragraph.sponsor_contacts.field_sponsor_contact_notes
+field_name: field_sponsor_contact_notes
+entity_type: paragraph
+bundle: sponsor_contacts
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

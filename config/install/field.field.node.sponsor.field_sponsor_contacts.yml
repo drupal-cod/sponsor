@@ -1,0 +1,30 @@
+uuid: 65e51954-1be6-4288-805b-cf4c9489d19a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_contacts
+    - node.type.sponsor
+    - paragraphs.paragraphs_type.sponsor_contacts
+  module:
+    - entity_reference_revisions
+id: node.sponsor.field_sponsor_contacts
+field_name: field_sponsor_contacts
+entity_type: node
+bundle: sponsor
+label: Contacts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      sponsor_contacts: sponsor_contacts
+    target_bundles_drag_drop:
+      sponsor_contacts:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions
