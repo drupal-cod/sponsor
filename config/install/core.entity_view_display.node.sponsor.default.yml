@@ -1,21 +1,45 @@
+uuid: 124cd9e2-948b-4c1f-86a2-1f7b0ef9eec0
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.sponsor.field_sponsor_body
+    - field.field.node.sponsor.field_sponsor_contacts
     - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_other_levels
     - field.field.node.sponsor.field_sponsor_related_attendees
     - field.field.node.sponsor.field_sponsor_sponsorship_level
     - field.field.node.sponsor.field_sponsor_url
     - node.type.sponsor
   module:
+    - entity_reference_revisions
     - image
     - link
+    - text
     - user
+_core:
+  default_config_hash: JQTaDa78tXz5L-xszx6OIIlPus8Nf2HAQ5m-acg2bIM
 id: node.sponsor.default
 targetEntityType: node
 bundle: sponsor
 mode: default
 content:
+  field_sponsor_body:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_sponsor_contacts:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_sponsor_logo:
     weight: 103
     label: above
@@ -24,6 +48,15 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_sponsor_other_levels:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_sponsor_related_attendees:
     weight: 105
     label: above
@@ -31,6 +64,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_sponsor_sponsorship_level:
     weight: 104
     label: above
@@ -38,6 +72,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_sponsor_url:
     weight: 102
     label: above
@@ -49,8 +84,10 @@ content:
       rel: '0'
     third_party_settings: {  }
     type: link
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

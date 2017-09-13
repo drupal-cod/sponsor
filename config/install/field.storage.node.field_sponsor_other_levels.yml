@@ -1,22 +1,21 @@
-uuid: 12a4db80-be58-42ff-bc12-4ae277756321
+uuid: 1204fec5-9cfc-4275-bdff-33f07008edaa
 langcode: en
 status: true
 dependencies:
   module:
     - field_permissions
     - node
-    - taxonomy
 third_party_settings:
   field_permissions:
     permission_type: public
-_core:
-  default_config_hash: h9fJ8NNBXYc0Au-xb7SWe1xnsElrAuh_1RXOvOir2IY
-id: node.field_sponsor_sponsorship_level
-field_name: field_sponsor_sponsorship_level
+id: node.field_sponsor_other_levels
+field_name: field_sponsor_other_levels
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
 cardinality: -1
