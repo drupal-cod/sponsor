@@ -4,5 +4,4 @@ description: 'Provides a sponsor content type, view, and sponsorship level vocab
 core: 8.x
 dependencies:
   - field
-  - node
 package: 'COD'

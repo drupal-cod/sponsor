@@ -1,8 +1,0 @@
-name: 'Sponsors Event'
-description: 'Associates Sponsors content with Event content'
-type: module
-core: 8.x
-dependencies:
-  - event
-  - sponsors
-package: 'COD'
