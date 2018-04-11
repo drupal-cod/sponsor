@@ -16,7 +16,7 @@ function sponsors_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.sponsors':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('') . '</p>';
+      $output .= '<p>' . t('Sponsors Help') . '</p>';
       return $output;
 
     default:

@@ -8,6 +8,7 @@ use Drupal\Core\Entity\RevisionableContentEntityBase;
 use Drupal\Core\Entity\RevisionableInterface;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\user\UserInterface;
 
 /**
@@ -210,9 +211,10 @@ class Sponsor extends RevisionableContentEntityBase implements SponsorInterface 
       ->setSetting('target_type', 'user')
       ->setSetting('handler', 'default')
       ->setTranslatable(TRUE)
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'hidden',
-        'type' => 'author',
+        'type' => 'hidden',
         'weight' => 0,
       ])
       ->setDisplayOptions('form', [
@@ -232,6 +234,7 @@ class Sponsor extends RevisionableContentEntityBase implements SponsorInterface 
       ->setLabel(t('Name'))
       ->setDescription(t('The name of the Sponsor entity.'))
       ->setRevisionable(TRUE)
+      ->setRequired(TRUE)
       ->setSettings([
         'max_length' => 50,
         'text_processing' => 0,
@@ -270,6 +273,174 @@ class Sponsor extends RevisionableContentEntityBase implements SponsorInterface 
       ->setRevisionable(TRUE)
       ->setTranslatable(TRUE);
 
+    $fields['sponsor_body'] = BaseFieldDefinition::create('text_with_summary')
+      ->setLabel(t('Body'))
+      ->setDescription(t('Body for Sponsor content.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'text_default',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'text_with_summary',
+        'weight' => 5,
+        'settings' => [
+          'rows' => 4,
+        ],
+      ]);
+
+    $fields['sponsor_url'] = BaseFieldDefinition::create('uri')
+      ->setLabel(t('Sponsor URL'))
+      ->setDescription(t('Link to Sponsor Website.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'URL',
+        'type' => 'uri',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'uri',
+        'weight' => 6,
+      ]);
+
+    $fields['sponsor_level'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Sponsorship Level'))
+      ->setDescription(t('Primary Sponsorship Level.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', ['target_bundles' => ['default_sponsorship_level']])
+      ->setDisplayOptions('view', [
+        'label' => 'Sponsorship Level',
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 6,
+      ]);
+
+    $fields['sponsor_other_levels'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Other Sponsorship Levels'))
+      ->setDescription(t('Additional Sponsorship Levels.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', ['target_bundles' => ['default_sponsorship_level']])
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('view', [
+        'label' => 'Sponsorship Level',
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'options_select',
+        'weight' => 6,
+      ]);
+
+    $fields['sponsor_logo'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Sponsor Logo'))
+      ->setDescription(t('Media Image of the Sponsor Logo.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setSetting('target_type', 'media')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', ['target_bundles' => ['image']])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'entity_reference_entity_view',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_browser_entity_reference',
+        'settings' => [
+          'entity_browser' => 'media_browser',
+          'field_widget_display' => 'rendered_entity',
+          'field_widget_edit' => TRUE,
+          'field_widget_remove' => TRUE,
+          'selection_mode' => 'selection_append',
+          'field_widget_display_settings' => [
+            'view_mode' => 'thumbnail',
+          ],
+          'open' => FALSE,
+        ],
+        'weight' => 6,
+        'cardinality' => -1,
+      ]);
+
+    $fields['sponsor_notes'] = BaseFieldDefinition::create('text_with_summary')
+      ->setLabel(t('Notes'))
+      ->setDescription(t('Notes for this sponsor. Not Visible on sponsor node.'))
+      ->setRevisionable(TRUE)
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'hidden',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textarea',
+        'weight' => 5,
+        'settings' => [
+          'rows' => 4,
+        ],
+      ]);
+
+    $fields['sponsor_users'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Related Users'))
+      ->setDescription(t('Users in the system that are related to this sponsor.'))
+      ->setRevisionable(TRUE)
+      ->setSetting('target_type', 'user')
+      ->setSetting('handler', 'default')
+      ->setTranslatable(TRUE)
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'hidden',
+        'weight' => 0,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => 5,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['status']
+      ->setDisplayOptions('form', [
+        'type' => 'boolean_checkbox',
+        'settings' => [
+          'display_label' => TRUE,
+        ],
+        'weight' => 7,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+    return $fields;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function bundleFieldDefinitions(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+    $fields = parent::bundleFieldDefinitions($entity_type, $bundle, $base_field_definitions);
     return $fields;
   }
 
