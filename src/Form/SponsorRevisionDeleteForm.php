@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\EntityStorageInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a form for deleting a Sponsor revision.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorRevisionDeleteForm extends ConfirmFormBase {
 
@@ -20,7 +20,7 @@ class SponsorRevisionDeleteForm extends ConfirmFormBase {
   /**
    * The Sponsor revision.
    *
-   * @var \Drupal\sponsors\Entity\SponsorInterface
+   * @var \Drupal\sponsor\Entity\SponsorInterface
    */
   protected $revision;
 

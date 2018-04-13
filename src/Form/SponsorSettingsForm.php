@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Class SponsorSettingsForm.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorSettingsForm extends FormBase {
 

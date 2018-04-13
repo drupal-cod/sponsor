@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\sponsors\Controller;
+namespace Drupal\sponsor\Controller;
 
 use Drupal\Component\Utility\Xss;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Url;
-use Drupal\sponsors\Entity\SponsorInterface;
+use Drupal\sponsor\Entity\SponsorInterface;
 
 /**
  * Class SponsorController.
@@ -48,7 +48,7 @@ class SponsorController extends ControllerBase implements ContainerInjectionInte
   /**
    * Generates an overview table of older revisions of a Sponsor .
    *
-   * @param \Drupal\sponsors\Entity\SponsorInterface $sponsor
+   * @param \Drupal\sponsor\Entity\SponsorInterface $sponsor
    *   A Sponsor  object.
    *
    * @return array
@@ -75,7 +75,7 @@ class SponsorController extends ControllerBase implements ContainerInjectionInte
     $latest_revision = TRUE;
 
     foreach (array_reverse($vids) as $vid) {
-      /** @var \Drupal\sponsors\SponsorInterface $revision */
+      /** @var \Drupal\sponsor\Entity\SponsorInterface $revision */
       $revision = $sponsor_storage->loadRevision($vid);
       // Only show revisions that are affected by the language that is being
       // displayed.

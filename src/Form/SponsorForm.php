@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Form controller for Sponsor edit forms.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorForm extends ContentEntityForm {
 
@@ -16,7 +16,7 @@ class SponsorForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var $entity \Drupal\sponsors\Entity\Sponsor */
+    /* @var $entity \Drupal\sponsor\Entity\Sponsor */
     $form = parent::buildForm($form, $form_state);
 
     if (!$this->entity->isNew()) {

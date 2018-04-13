@@ -1,19 +1,19 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Drupal\sponsors\Entity\SponsorInterface;
+use Drupal\sponsor\Entity\SponsorInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a form for reverting a Sponsor revision.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorRevisionRevertForm extends ConfirmFormBase {
 
@@ -21,7 +21,7 @@ class SponsorRevisionRevertForm extends ConfirmFormBase {
   /**
    * The Sponsor revision.
    *
-   * @var \Drupal\sponsors\Entity\SponsorInterface
+   * @var \Drupal\sponsor\Entity\SponsorInterface
    */
   protected $revision;
 
@@ -130,12 +130,12 @@ class SponsorRevisionRevertForm extends ConfirmFormBase {
   /**
    * Prepares a revision to be reverted.
    *
-   * @param \Drupal\sponsors\Entity\SponsorInterface $revision
+   * @param \Drupal\sponsor\Entity\SponsorInterface $revision
    *   The revision to be reverted.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The prepared revision ready to be stored.
    */
   protected function prepareRevertedRevision(SponsorInterface $revision, FormStateInterface $form_state) {

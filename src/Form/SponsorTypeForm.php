@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,7 +30,7 @@ class SponsorTypeForm extends EntityForm {
       '#type' => 'machine_name',
       '#default_value' => $sponsor_type->id(),
       '#machine_name' => [
-        'exists' => '\Drupal\sponsors\Entity\SponsorType::load',
+        'exists' => '\Drupal\sponsor\Entity\SponsorType::load',
       ],
       '#disabled' => !$sponsor_type->isNew(),
     ];
