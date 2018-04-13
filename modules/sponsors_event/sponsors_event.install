@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function sponsors_event_uninstall() {
+  \Drupal::configFactory()->getEditable('field.storage.sponsor.sponsors_event')->delete();
+}
