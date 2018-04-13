@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains sponsors_event.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_entity_insert().
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function sponsors_event_entity_insert(EntityInterface $entity) {
+  $tids = NULL;
+  if ($entity->getEntityTypeId() == 'event') {
+    $title = $entity->get('name')->getValue();
+    $name = t($title[0]['value']);
+    $vocabulary_name = t(str_replace(" ", "_", strtolower($name)));
+    $name = t($title[0]['value'] . " Sponsorship Levels");
+    $query = \Drupal::entityQuery('taxonomy_term');
+    $query->condition('vid', $vocabulary_name);
+    $query->sort('weight');
+    $tids = $query->execute();
+    if ($tids == NULL) {
+      $vocabulary = Vocabulary::create(
+        [
+          'vid' => $vocabulary_name,
+          'description' => '',
+          'name' => $name,
+        ]);
+      $vocabulary->save();
+      \Drupal::logger('sponsors_event')->notice("Automatically created Vocabulary for '$name.'");;
+    }
+  }
+}
