@@ -127,8 +127,17 @@ class SponsorController extends ControllerBase implements ContainerInjectionInte
             $links['revert'] = [
               'title' => $this->t('Revert'),
               'url' => $has_translations ?
-              Url::fromRoute('entity.sponsor.translation_revert', ['sponsor' => $sponsor->id(), 'sponsor_revision' => $vid, 'langcode' => $langcode]) :
-              Url::fromRoute('entity.sponsor.revision_revert', ['sponsor' => $sponsor->id(), 'sponsor_revision' => $vid]),
+              Url::fromRoute('entity.sponsor.translation_revert',
+                [
+                  'sponsor' => $sponsor->id(),
+                  'sponsor_revision' => $vid,
+                  'langcode' => $langcode,
+                ]) :
+              Url::fromRoute('entity.sponsor.revision_revert',
+                [
+                  'sponsor' => $sponsor->id(),
+                  'sponsor_revision' => $vid,
+                ]),
             ];
           }
 
