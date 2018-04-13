@@ -1,8 +1,8 @@
-name: Sponsors Starter
+name: Sponsor Starter
 type: module
 description: 'A starter kit for defining sponsors including a starter entity, views, and blocks.'
 core: 8.x
 dependencies:
-  - sponsors
+  - sponsor
   - views
 package: 'COD'
