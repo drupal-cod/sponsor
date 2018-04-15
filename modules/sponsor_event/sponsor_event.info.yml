@@ -1,8 +1,8 @@
-name: Sponsors Events Integration
+name: Sponsor Events Integration
 type: module
 description: 'A module that modifies sponsors based on event entities.'
 core: 8.x
 dependencies:
-  - sponsors
+  - sponsor
   - event
 package: 'COD'

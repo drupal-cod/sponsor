@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - sponsors.sponsor_type.sponsors
+    - sponsor_starter.sponsor_type.sponsors
   module:
     - sponsors
     - taxonomy

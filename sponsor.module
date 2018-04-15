@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains sponsors.module.
+ * Contains sponsor.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
@@ -10,13 +10,13 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function sponsors_help($route_name, RouteMatchInterface $route_match) {
+function sponsor_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the sponsors module.
-    case 'help.page.sponsors':
+    // Main module help for the sponsor module.
+    case 'help.page.sponsor':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Sponsors Help') . '</p>';
+      $output .= '<p>' . t('Sponsor Module Help') . '</p>';
       return $output;
 
     default:
@@ -26,7 +26,7 @@ function sponsors_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function sponsors_theme() {
+function sponsor_theme() {
   $theme = [];
   $theme['sponsor'] = [
     'render element' => 'elements',
@@ -44,7 +44,7 @@ function sponsors_theme() {
 /**
  * Implements hook_theme_suggestions_HOOK().
  */
-function sponsors_theme_suggestions_sponsor(array $variables) {
+function sponsor_theme_suggestions_sponsor(array $variables) {
   $suggestions = [];
   $entity = $variables['elements']['#sponsor'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');

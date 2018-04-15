@@ -375,7 +375,6 @@ class Sponsor extends RevisionableContentEntityBase implements SponsorInterface 
           'open' => FALSE,
         ],
         'weight' => 6,
-        'cardinality' => -1,
       ]);
 
     $fields['sponsor_notes'] = BaseFieldDefinition::create('text_with_summary')
