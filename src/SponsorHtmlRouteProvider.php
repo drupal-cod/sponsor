@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;
@@ -64,7 +64,7 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route
         ->setDefaults([
           '_title' => "{$entity_type->getLabel()} revisions",
-          '_controller' => '\Drupal\sponsors\Controller\SponsorController::revisionOverview',
+          '_controller' => '\Drupal\sponsor\Controller\SponsorController::revisionOverview',
         ])
         ->setRequirement('_permission', 'access sponsor revisions')
         ->setOption('_admin_route', TRUE);
@@ -87,8 +87,8 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route($entity_type->getLinkTemplate('revision'));
       $route
         ->setDefaults([
-          '_controller' => '\Drupal\sponsors\Controller\SponsorController::revisionShow',
-          '_title_callback' => '\Drupal\sponsors\Controller\SponsorController::revisionPageTitle',
+          '_controller' => '\Drupal\sponsor\Controller\SponsorController::revisionShow',
+          '_title_callback' => '\Drupal\sponsor\Controller\SponsorController::revisionPageTitle',
         ])
         ->setRequirement('_permission', 'access sponsor revisions')
         ->setOption('_admin_route', TRUE);
@@ -111,7 +111,7 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route($entity_type->getLinkTemplate('revision_revert'));
       $route
         ->setDefaults([
-          '_form' => '\Drupal\sponsors\Form\SponsorRevisionRevertForm',
+          '_form' => '\Drupal\sponsor\Form\SponsorRevisionRevertForm',
           '_title' => 'Revert to earlier revision',
         ])
         ->setRequirement('_permission', 'revert all sponsor revisions')
@@ -135,7 +135,7 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route($entity_type->getLinkTemplate('revision_delete'));
       $route
         ->setDefaults([
-          '_form' => '\Drupal\sponsors\Form\SponsorRevisionDeleteForm',
+          '_form' => '\Drupal\sponsor\Form\SponsorRevisionDeleteForm',
           '_title' => 'Delete earlier revision',
         ])
         ->setRequirement('_permission', 'delete all sponsor revisions')
@@ -159,7 +159,7 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route($entity_type->getLinkTemplate('translation_revert'));
       $route
         ->setDefaults([
-          '_form' => '\Drupal\sponsors\Form\SponsorRevisionRevertTranslationForm',
+          '_form' => '\Drupal\sponsor\Form\SponsorRevisionRevertTranslationForm',
           '_title' => 'Revert to earlier revision of a translation',
         ])
         ->setRequirement('_permission', 'revert all sponsor revisions')
@@ -183,7 +183,7 @@ class SponsorHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route("/admin/structure/{$entity_type->id()}/settings");
       $route
         ->setDefaults([
-          '_form' => 'Drupal\sponsors\Form\SponsorSettingsForm',
+          '_form' => 'Drupal\sponsor\Form\SponsorSettingsForm',
           '_title' => "{$entity_type->getLabel()} settings",
         ])
         ->setRequirement('_permission', $entity_type->getAdminPermission())

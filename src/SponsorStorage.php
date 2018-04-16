@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\sponsors\Entity\SponsorInterface;
+use Drupal\sponsor\Entity\SponsorInterface;
 
 /**
  * Defines the storage handler class for Sponsor entities.
@@ -13,7 +13,7 @@ use Drupal\sponsors\Entity\SponsorInterface;
  * This extends the base storage class, adding required special handling for
  * Sponsor entities.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorStorage extends SqlContentEntityStorage implements SponsorStorageInterface {
 

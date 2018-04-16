@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Entity;
+namespace Drupal\sponsor\Entity;
 
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -14,28 +14,28 @@ use Drupal\user\UserInterface;
 /**
  * Defines the Sponsor entity.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  *
  * @ContentEntityType(
  *   id = "sponsor",
  *   label = @Translation("Sponsor"),
  *   bundle_label = @Translation("Sponsor type"),
  *   handlers = {
- *     "storage" = "Drupal\sponsors\SponsorStorage",
+ *     "storage" = "Drupal\sponsor\SponsorStorage",
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\sponsors\SponsorListBuilder",
- *     "views_data" = "Drupal\sponsors\Entity\SponsorViewsData",
- *     "translation" = "Drupal\sponsors\SponsorTranslationHandler",
+ *     "list_builder" = "Drupal\sponsor\SponsorListBuilder",
+ *     "views_data" = "Drupal\sponsor\Entity\SponsorViewsData",
+ *     "translation" = "Drupal\sponsor\SponsorTranslationHandler",
  *
  *     "form" = {
- *       "default" = "Drupal\sponsors\Form\SponsorForm",
- *       "add" = "Drupal\sponsors\Form\SponsorForm",
- *       "edit" = "Drupal\sponsors\Form\SponsorForm",
- *       "delete" = "Drupal\sponsors\Form\SponsorDeleteForm",
+ *       "default" = "Drupal\sponsor\Form\SponsorForm",
+ *       "add" = "Drupal\sponsor\Form\SponsorForm",
+ *       "edit" = "Drupal\sponsor\Form\SponsorForm",
+ *       "delete" = "Drupal\sponsor\Form\SponsorDeleteForm",
  *     },
- *     "access" = "Drupal\sponsors\SponsorAccessControlHandler",
+ *     "access" = "Drupal\sponsor\SponsorAccessControlHandler",
  *     "route_provider" = {
- *       "html" = "Drupal\sponsors\SponsorHtmlRouteProvider",
+ *       "html" = "Drupal\sponsor\SponsorHtmlRouteProvider",
  *     },
  *   },
  *   base_table = "sponsor",

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;

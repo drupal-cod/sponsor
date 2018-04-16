@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\ContentEntityStorageInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Language\LanguageInterface;
-use Drupal\sponsors\Entity\SponsorInterface;
+use Drupal\sponsor\Entity\SponsorInterface;
 
 /**
  * Defines the storage handler class for Sponsor entities.
@@ -20,7 +20,7 @@ interface SponsorStorageInterface extends ContentEntityStorageInterface {
   /**
    * Gets a list of Sponsor revision IDs for a specific Sponsor.
    *
-   * @param \Drupal\sponsors\Entity\SponsorInterface $entity
+   * @param \Drupal\sponsor\Entity\SponsorInterface $entity
    *   The Sponsor entity.
    *
    * @return int[]
@@ -42,7 +42,7 @@ interface SponsorStorageInterface extends ContentEntityStorageInterface {
   /**
    * Counts the number of revisions in the default language.
    *
-   * @param \Drupal\sponsors\Entity\SponsorInterface $entity
+   * @param \Drupal\sponsor\Entity\SponsorInterface $entity
    *   The Sponsor entity.
    *
    * @return int

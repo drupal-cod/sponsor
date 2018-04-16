@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
@@ -9,7 +9,7 @@ use Drupal\Core\Link;
 /**
  * Defines a class to build a listing of Sponsor entities.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorListBuilder extends EntityListBuilder {
 
@@ -26,7 +26,7 @@ class SponsorListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\sponsors\Entity\Sponsor */
+    /* @var $entity \Drupal\sponsor\Entity\Sponsor */
     $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),

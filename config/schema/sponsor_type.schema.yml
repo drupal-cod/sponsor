@@ -1,4 +1,4 @@
-sponsors.sponsor_type.*:
+sponsor.sponsor_type.*:
   type: config_entity
   label: 'Sponsor type config'
   mapping:

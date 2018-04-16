@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Entity;
+namespace Drupal\sponsor\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 
@@ -12,14 +12,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   label = @Translation("Sponsor type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\sponsors\SponsorTypeListBuilder",
+ *     "list_builder" = "Drupal\sponsor\SponsorTypeListBuilder",
  *     "form" = {
- *       "add" = "Drupal\sponsors\Form\SponsorTypeForm",
- *       "edit" = "Drupal\sponsors\Form\SponsorTypeForm",
- *       "delete" = "Drupal\sponsors\Form\SponsorTypeDeleteForm"
+ *       "add" = "Drupal\sponsor\Form\SponsorTypeForm",
+ *       "edit" = "Drupal\sponsor\Form\SponsorTypeForm",
+ *       "delete" = "Drupal\sponsor\Form\SponsorTypeDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\sponsors\SponsorTypeHtmlRouteProvider",
+ *       "html" = "Drupal\sponsor\SponsorTypeHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "sponsor_type",

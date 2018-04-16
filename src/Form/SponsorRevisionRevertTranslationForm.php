@@ -1,18 +1,18 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\sponsors\Entity\SponsorInterface;
+use Drupal\sponsor\Entity\SponsorInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a form for reverting a Sponsor revision for a single translation.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorRevisionRevertTranslationForm extends SponsorRevisionRevertForm {
 
@@ -93,7 +93,7 @@ class SponsorRevisionRevertTranslationForm extends SponsorRevisionRevertForm {
   protected function prepareRevertedRevision(SponsorInterface $revision, FormStateInterface $form_state) {
     $revert_untranslated_fields = $form_state->getValue('revert_untranslated_fields');
 
-    /** @var \Drupal\sponsors\Entity\SponsorInterface $default_revision */
+    /** @var \Drupal\sponsor\Entity\SponsorInterface $default_revision */
     $latest_revision = $this->SponsorStorage->load($revision->id());
     $latest_revision_translation = $latest_revision->getTranslation($this->langcode);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Entity;
+namespace Drupal\sponsor\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\RevisionLogInterface;
@@ -10,7 +10,7 @@ use Drupal\user\EntityOwnerInterface;
 /**
  * Provides an interface for defining Sponsor entities.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface, EntityChangedInterface, EntityOwnerInterface {
 
@@ -28,7 +28,7 @@ interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface,
    * @param string $name
    *   The Sponsor name.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The called Sponsor entity.
    */
   public function setName($name);
@@ -47,7 +47,7 @@ interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface,
    * @param int $timestamp
    *   The Sponsor creation timestamp.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The called Sponsor entity.
    */
   public function setCreatedTime($timestamp);
@@ -68,7 +68,7 @@ interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface,
    * @param bool $published
    *   TRUE to set this Sponsor to published, FALSE to set it to unpublished.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The called Sponsor entity.
    */
   public function setPublished($published);
@@ -87,7 +87,7 @@ interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface,
    * @param int $timestamp
    *   The UNIX timestamp of when this revision was created.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The called Sponsor entity.
    */
   public function setRevisionCreationTime($timestamp);
@@ -106,7 +106,7 @@ interface SponsorInterface extends ContentEntityInterface, RevisionLogInterface,
    * @param int $uid
    *   The user ID of the revision author.
    *
-   * @return \Drupal\sponsors\Entity\SponsorInterface
+   * @return \Drupal\sponsor\Entity\SponsorInterface
    *   The called Sponsor entity.
    */
   public function setRevisionUserId($uid);

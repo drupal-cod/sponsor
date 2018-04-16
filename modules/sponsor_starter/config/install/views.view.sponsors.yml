@@ -5,7 +5,7 @@ dependencies:
   config:
     - sponsor_starter.sponsor_type.sponsors
   module:
-    - sponsors
+    - sponsor
     - taxonomy
     - user
 id: sponsors

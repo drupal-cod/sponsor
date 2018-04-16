@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors;
+namespace Drupal\sponsor;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
@@ -10,7 +10,7 @@ use Drupal\Core\Access\AccessResult;
 /**
  * Access controller for the Sponsor entity.
  *
- * @see \Drupal\sponsors\Entity\Sponsor.
+ * @see \Drupal\sponsor\Entity\Sponsor.
  */
 class SponsorAccessControlHandler extends EntityAccessControlHandler {
 
@@ -18,7 +18,7 @@ class SponsorAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\sponsors\Entity\SponsorInterface $entity */
+    /** @var \Drupal\sponsor\Entity\SponsorInterface $entity */
     switch ($operation) {
       case 'view':
         if (!$entity->isPublished()) {

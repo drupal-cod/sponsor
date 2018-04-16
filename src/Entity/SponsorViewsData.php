@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\sponsors\Entity;
+namespace Drupal\sponsor\Entity;
 
 use Drupal\views\EntityViewsData;
 

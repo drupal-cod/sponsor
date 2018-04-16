@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\sponsors\Form;
+namespace Drupal\sponsor\Form;
 
 use Drupal\Core\Entity\ContentEntityDeleteForm;
 
 /**
  * Provides a form for deleting Sponsor entities.
  *
- * @ingroup sponsors
+ * @ingroup sponsor
  */
 class SponsorDeleteForm extends ContentEntityDeleteForm {
 
